@@ -1,18 +1,25 @@
 (function(angular) {
 
     'use strict';
-    var module = angular.module('todoApp', ['ngMaterial']);
+    
 
     angular.module('todoApp').controller('TodoController', TodoController);
 //hgdggf ytrdrgh hjgfd
 ///iuuf
 
     //This is the application controller
+    TodoController.$inject = ['storageService','$mdDialog'];
     function TodoController(storageService, $mdDialog) {
         var vm = this;
 
         vm.selectedItem = null;
         vm.items = storageService.get() || [];
+        vm.notDone = notDone;
+        vm.done = done;
+        vm.all=all;
+        vm.deleteItem=deleteItem;
+        vm.createItem=createItem;
+        vm.addTask=addTask;
 
         vm.notDone = function(item) {
             return item.done == false;
