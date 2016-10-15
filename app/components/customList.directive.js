@@ -17,33 +17,37 @@
             controllerAs: 'customListCtrl',
             transclude: true,
             restrict: 'E',
-            templateUrl: 'app/components/customList.template.html'
+            templateUrl: 'app/components/customList.template.html' 
         };
     }
+
+
     customListController.$inject = ['storageService'];
+
     //Directive controller
     function customListController(storageService) {
         var vm = this;
-        var vm.changePriority = changePriority ; // CONTINUARE CON LE ALTRE FUNZIONI!
-
+        vm.changePriority = changePriority;
+        vm.checkStateChanged = checkStateChanged;
+        vm.toggleSelection = toggleSelection
 
         //Changes the priority of the given item
-        vm.changePriority = function(item) {
+        function changePriority(item) {
             if (item.priority <= 0)
                 item.priority++;
             else
                 item.priority = -1;
- //creare oggetto item controller per gestone item
+
             storageService.set(vm.items);
         }
 
         //Occurs when the status of an items changes
-        vm.checkStateChanged = function() {
+        function checkStateChanged() {
             storageService.set(vm.items);
         }
 
         //Select or deselect the given item
-        vm.toggleSelection = function(item) {
+        function toggleSelection(item) {
             if (vm.selectedItem == null || vm.selectedItem != item)
                 vm.selectedItem = item;
             else

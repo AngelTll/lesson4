@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Task App</title>
-
+    
     <!-- Angular Material style sheet -->
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -23,8 +23,11 @@
     <!-- Code Behind -->
     <script src="app/todoApp.module.js"></script>
     <script src="app/todo.controller.js"></script>
-    <script src="app/storageService.js"></script>
-      <script src="app/components/customList.directive.js"></script>
+    <script src="app/storage.service.js"></script>
+    <!-- <script src="app/todoItem.service.js"></script> -->
+    <script src="app/components/customList.directive.js"></script>
+
+
 </head>
 
 <body ng-app="todoApp" class="no-scroll">
@@ -34,6 +37,7 @@
                 <div class="md-toolbar-tools">
                     <h2>
                         <span>Task App</span>
+                        prova
                     </h2>
                     <span flex></span>
                     <md-button ng-disabled="ctrl.selectedItem == null" ng-click="ctrl.deleteItem()" class="md-icon-button" aria-label="Delete">
@@ -57,7 +61,7 @@
                     <md-icon>add</md-icon>
                 </md-button>
             </md-content>
-
+        </div>
         </div>
 </body>
 

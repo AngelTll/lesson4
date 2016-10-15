@@ -5,9 +5,10 @@
         .module('todoApp')
         .service('storageService', storageService);
 
-        storageService.$inject =['$window'];
+    storageService.$inject = ['$window'];
 
-    function Service($window) {
+
+    function storageService($window) {
         this.set = set;
         this.get = get;
 
