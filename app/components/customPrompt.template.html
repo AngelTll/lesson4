@@ -1,0 +1,65 @@
+<md-dialog aria-label="List dialog">
+    
+  <md-dialog-content>
+         <div class="md-dialog-content">
+      <h2><i>Insert  a  new  Task</i></h2>
+  </md-dialog-content>
+
+  <md-input-container class="md-block" flex-gt-sm="">
+          <label>Title</label>
+          <input ng-model="ctrl.taskTitle">
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm="">
+          <label>Description</label>
+          <input ng-model="ctrl.taskDescription">
+  </md-input-container>
+
+  <md-chips ng-model="ctrl.taskTags" readonly="false" md-removable="ctrl.removable" placeholder="Enter a tag" delete-button-label="Remove Tag" delete-hint="Press delete to remove tag" secondary-placeholder="+Tag"></md-chips>          
+
+
+ <md-input-container class="md-block" flex-gt-sm="">
+          <label> Estimated time (hours)</label>
+          <input type="number" ng-model="ctrl.taskEstimatedTime">
+</md-input-container> 
+
+<md-input-container class="md-block" flex-gt-sm="">
+          <label>Enter date</label>
+          <md-datepicker ng-model="ctrl.taskDate"></md-datepicker>
+            
+</md-input-container>
+
+<md-input-container class="md-block" flex-gt-sm="">
+          <label>Hour</label>
+          <input type="time" ng-model="ctrl.taskTime">
+          
+</md-input-container>
+
+<md-input-container class="md-block" flex-gt-sm="">
+    <label>Priority</label>
+   <md-select ng-model="ctrl.taskPriority">
+      <md-option value=-1>
+        low
+      </md-option>
+      <md-option value=0>
+        normal
+      </md-option>
+      <md-option value=1>
+        high
+      </md-option>
+</md-input-container>
+
+<md-input-container class="md-block" flex-gt-sm="">
+  <md-checkbox ng-model="ctrl.taskDone" aria-label="Checkbox 1">
+    Task alredy done
+  </md-checkbox>
+</md-input-container>
+    <md-dialog-actions>
+        <md-button ng-click="ctrl.closeDialog()" class="md-primary">
+          Cancel
+        </md-button>
+        <md-button ng-if="ctrl.taskTitle!=null" ng-click="ctrl.result(ctrl.taskTitle, ctrl.taskDone, ctrl.taskPriority, ctrl.taskDate, ctrl.taskEstimatedTime, ctrl.taskTags, ctrl.taskDescription, ctrl.taskTime)" class="md-primary">
+          OK
+        </md-button>
+</md-dialog-actions>
+</md-dialog>

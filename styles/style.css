@@ -26,3 +26,9 @@ md-tab-content.md-no-scroll>div,
 .selected {
     background: #efefef;
 }
+
+#searchBar{
+    margin: 1px;
+    margin-top: 14px;
+    height: 30px;
+}

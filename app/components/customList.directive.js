@@ -12,6 +12,8 @@
                 items: '=',
                 selectedItem: '=',
                 filterFunction: '=',
+                sfunction: '=',
+                
             },
             controller: customListController,
             controllerAs: 'customListCtrl',
@@ -30,6 +32,7 @@
         vm.changePriority = changePriority;
         vm.checkStateChanged = checkStateChanged;
         vm.toggleSelection = toggleSelection
+
 
         //Changes the priority of the given item
         function changePriority(item) {
